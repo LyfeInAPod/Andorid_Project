@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Avengers_Info_App.MainMasterDetailPageMaster"
+             Title="Master">
+    <Grid>
+        <ScrollView>
+            <StackLayout BackgroundColor="White">
+                <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="Default"
+              SeparatorColor="Black"
+              HasUnevenRows="True"
+              ItemsSource="{Binding MenuItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnSpacing="25" Margin="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="AUTO"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="1" Grid.Row="0" FontSize="22" VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" Text="{Binding Title}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
